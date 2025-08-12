@@ -1,0 +1,21 @@
+on run {input, parameters}
+  -- Collect POSIX paths from Finder selection
+  set paths to {}
+  repeat with f in input
+    try
+      set end of paths to POSIX path of f
+    end try
+  end repeat
+  if (count of paths) = 0 then return input
+
+  -- Load JSX source
+  set jsPOSIX to "/Users/bdianna/Library/Scripts/Illustrator/EPS_to_PDF_with_AI.jsx"
+  set jsText to do shell script "cat " & quoted form of jsPOSIX
+
+  -- Run Illustrator with the file list as arguments
+  tell application "Adobe Illustrator 2025"
+    activate
+    do javascript jsText with arguments paths
+  end tell
+  return input
+end run

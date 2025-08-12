@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/21725307/README.md)
 # Convert EPS → PDF (AI‑editable) — Finder Quick Action (macOS)
 
 A right‑click **Quick Action** for macOS Finder that batch‑converts selected **.eps / .epsf** files to **PDF with “Preserve Illustrator Editing Capabilities”** using Adobe Illustrator. The action also moves the original EPS files into an `_archive/` folder next to each converted file. Non‑EPS files in your selection are ignored, so you can lasso a whole folder and run it.
